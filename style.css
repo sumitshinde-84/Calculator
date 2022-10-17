@@ -1,0 +1,204 @@
+*{
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+
+}
+
+
+body{
+
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 40px;
+background-color: antiquewhite;
+
+}
+
+
+.frame{
+
+width: 700px;
+height: 680px;
+border: 1px black solid;
+border-radius: 5px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+
+}
+
+.display{
+display: flex;
+flex-direction: column;
+border: 1px black solid;
+width: 680px;
+height:290px;
+justify-content: center;
+align-items: center;
+
+
+
+
+
+}
+
+.input{
+  width: 660px;  
+  height: 150px;
+  border: 1px black solid;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+   
+} 
+
+input{
+    width:450px;
+    height: 120px;
+    margin-top: 15px;
+  
+    margin-left: 30px;
+    border-radius: 10px;
+
+}
+
+
+h2{
+
+    margin-top: 15px;
+    margin-left: 25px;
+}
+hr{
+    padding: 1px;
+    background-color: rgb(192, 192, 192);
+
+}
+
+.solarbtn{
+
+    height: 80px;
+    display: flex;
+   
+}
+
+.allClear{
+
+    height: 60px;
+    width: 130px;
+    border: 1px black solid;
+}
+
+
+.clear{
+
+    height: 60px;
+    width: 130px;
+    border: 1px black solid;
+}
+
+
+.solar{
+
+    width:280px ;
+    height: 60px;
+    border: 1px black solid;
+    margin-left: 50px;
+}
+
+.s-btn{
+
+    margin-left: 20px;
+}
+
+.row{
+height: 340px;
+width: 660px;
+border: 1px black solid;
+margin-top:20px;
+display: flex;
+
+
+}
+
+.sect1{
+width: 110px;
+height: 340px;
+border: 1px black solid;
+display: flex;
+flex-direction: column;
+align-content: center;
+justify-content: center;
+}
+
+.sect2{
+
+    width: 280px;
+    height: 340px;
+    border: 1px black solid;
+    
+}
+
+.sect3{
+
+    width: 280px;
+    height: 340px;
+    border: 1px black solid;
+    display: flex;
+    
+    
+    
+}
+
+.row-sect2{
+    display: flex;
+    align-items: center;
+}
+
+.btn{
+
+    width: 60px;
+    height: 60px;
+    border: 1px black solid;
+    margin: 12px;
+    
+}
+
+.bt2{
+    margin-top: 26px;
+    
+}
+
+.plus{
+    width: 60px;
+    height: 135px;
+    border: 1px black solid;
+    margin-left: 12px;
+    margin-top: 24px;
+
+
+}
+
+.btg{
+
+    margin-top: 12px;
+}
+.btn-sq{
+
+    height: 35px;
+    width: 80px;
+    border: 1px black solid;
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+.bt0{
+
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+
