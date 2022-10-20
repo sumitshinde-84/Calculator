@@ -75,12 +75,6 @@ multiply.addEventListener('click',getMultiply);
 let mod = document.querySelector('.mod');
 mod.addEventListener('click',getMod)
 
-let root = document.querySelector('.root')
-root.addEventListener('click',getRoot)
-
-let signChange = document.querySelector('.signCh')
-signChange.addEventListener('click',getSignChange)
-
 let eql = document.querySelector('.isEql')
 eql.addEventListener('click',getEqual)
 
@@ -91,31 +85,6 @@ On.addEventListener('click',getOn)
 
 let backSpace = document.querySelector('.clear')
 backSpace.addEventListener('click',getBackSpace)
-
-
-
-function getSignChange(){
-    if(str.includes('-')){
-        str =str.split('')
-        console.log(str)
-        str.shift('-')
-        str =str.join()
-        str = str.replace(',','')
-        para2.textContent=`${str}`
-        console.log(str)
-    }
-    else if(!str.includes('-')){
-        str =str.split('')
-        console.log(str)
-        str.unshift('-')
-        console.log(str)
-        
-        str =str.join()
-        str = str.replace(',','')
-        para2.textContent=`${str}`
-        console.log(str)
-    }
-}     
 
 
 
@@ -335,42 +304,32 @@ function getPlus(){
 
 function getMin(){
 
-    if(para.textContent!=''){
-        para.textContent=''
-        para.textContent=`${result}`
-    }
-
-
+    
     if(num!=''){
         num2=str
         exp+=num2;
         para2.textContent=`${num2}`
         cal(num,num2,opt)
         exp=''
+        para.textContent=`${exp}`
         num=para2.textContent;
         exp+=num;
         para2.textContent=`${num}`
+        para.textContent=`${num}`;
         str=''
-        opt='-'
-        exp+=opt
     }else{
         num=str
         exp+=num;
         para2.textContent=`${num}`
         str=''
-        opt='-'
-        exp+=opt
     }
+  opt='-'
+  exp+=opt;
+  
   
 }
 
 function getDevide(){
-    if(para.textContent!=''){
-        para.textContent=''
-        para.textContent=`${result}`
-    }
-
-
     if(num!=''){
         num2=str
         exp+=num2;
@@ -381,27 +340,20 @@ function getDevide(){
         exp+=num;
         para2.textContent=`${num}`
         str=''
-        opt='/'
-        exp+=opt
     }else{
         num=str
         exp+=num;
         para2.textContent=`${num}`
         str=''
-        opt='/'
-        exp+=opt
     }
+  opt='/'
+  exp+=opt;
+  
     
   }
 
   function getMultiply(){
     
-    if(para.textContent!=''){
-        para.textContent=''
-        para.textContent=`${result}`
-    }
-
-
     if(num!=''){
         num2=str
         exp+=num2;
@@ -412,27 +364,20 @@ function getDevide(){
         exp+=num;
         para2.textContent=`${num}`
         str=''
-        opt='X'
-        exp+=opt
     }else{
         num=str
         exp+=num;
         para2.textContent=`${num}`
         str=''
-        opt='X'
-        exp+=opt
     }
+  opt='X'
+  exp+=opt;
+  
     
   }
 
   function getMod(){
    
-    if(para.textContent!=''){
-        para.textContent=''
-        para.textContent=`${result}`
-    }
-
-
     if(num!=''){
         num2=str
         exp+=num2;
@@ -443,30 +388,16 @@ function getDevide(){
         exp+=num;
         para2.textContent=`${num}`
         str=''
-        opt='%'
-        exp+=opt
     }else{
         num=str
         exp+=num;
         para2.textContent=`${num}`
         str=''
-        opt='%'
-        exp+=opt
     }
-  }
+  opt='%'
+  exp+=opt;
+  
 
-
-  function getRoot(){
-   
-    if(para.textContent!=''){
-        para.textContent=''
-        para.textContent=`${result}`
-    }
-      num=str
-    para.textContent=`root of ${num}`
-     cal(num,'0.5','root')
-
-    
   }
 
 function getEqual(){
@@ -501,6 +432,65 @@ para2.textContent=`${paraStr}`
 
 }
 
+
+// function filterOP(str,num){
+   
+   
+//     para.textContent=`${str}`
+//     console.log({str})
+
+//     str = str.split('');
+//     console.log({str})
+
+
+// for(i=0;i<str.length;i++){
+   
+//     if(str[i] in n && count==0  && num==''){
+//    num+=str[i];
+//    console.log({num})
+//     }
+ 
+//    else if(str[i]=='.' && point==0){
+//     num+=str[i];
+//     point++;
+//     console.log({num})
+//     }
+
+//     else if((str[i]=='+' || str[i] =='-' || str[i] =='/' || str[i] =='x' || str[i] =='%') && count==0)
+//     {
+//         opt+=str[i]
+//         bool=true
+//         count++;
+//         console.log({opt})
+//         continue;
+//     }else if(str[i] in n  && count>0)
+//     {
+
+//         num2+=str[i];
+//         console.log({num2})
+
+//     }else if(count==1 && (str[i]=='+' || str[i] =='-' || str[i] =='/' || str[i] =='x' || str[i] =='%')  )
+//     {
+
+//        rest+=str.slice(i)
+//        console.log(rest)
+//        break;
+//     }
+//     else if(str[i]=='.' && point ==1)
+//     {
+        
+//     num2+=str[i]
+//     console.log({num2})
+// }
+
+
+
+
+//  cal(num,num2,opt)
+
+// }
+
+
 function cal(num,num2,opt){
     num =parseFloat(num)
     num2=parseFloat(num2)
@@ -529,10 +519,7 @@ switch(opt) {
         result = num%num2
         break;
 
-    case 'root':
-        result = num**num2
-        break;
-           
+          
 } 
 
 if(result>99999999999){
