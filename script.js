@@ -3,18 +3,22 @@ let exp=''
 let num='';
 let num2='';
 let opt='';
-bool = false
 let result;
+bool = false
 let expHistory = []
 expHistory.length=50
-const myTimeout = setTimeout(getOff, 500);
+
+
 let inputBox = document.querySelector('.input-f');
 inputBox.style='text-align: right;align-item:center;'
+
 let para =document.createElement('p')
 inputBox.appendChild(para)
 para.style='font-size:30px'
+
 let breakT = document.createElement('br');
 inputBox.appendChild(breakT)
+
 let para2 = document.createElement('p');
 inputBox.appendChild(para2);
 para2.style='font-size:50px'
@@ -57,6 +61,8 @@ zeroD.addEventListener('click',getDZero)
 
 // let auto = document.querySelector('.auto')
 // auto.addEventListener('click',getAutoRpl)
+
+
 // events of sign section 
 
 
@@ -81,22 +87,24 @@ mod.addEventListener('click',getMod)
 let root = document.querySelector('.root')
 root.addEventListener('click',getRoot)
 
-let signChange = document.querySelector('.signCh')
-signChange.addEventListener('click',getSignChange)
-
 let eql = document.querySelector('.isEql')
 eql.addEventListener('click',getEqual)
+
+
+// events for some function keys
 
 let On = document.querySelector('.ON');
 On.addEventListener('click',getOn)
 
+let signChange = document.querySelector('.signCh')
+signChange.addEventListener('click',getSignChange)
 
 
 let backSpace = document.querySelector('.clear')
 backSpace.addEventListener('click',getBackSpace)
 
 
-
+// function keys section 
 
 function getSignChange(){
     if(str.includes('-')){
@@ -149,8 +157,26 @@ function getOff(){
     
 }     
 
-    
 
+function getBackSpace(){
+
+    let paraStr = para2.textContent
+    let paraStr2 = paraStr.split('')
+    
+    console.log(paraStr2)
+    paraStr2.pop();
+    
+    console.log(paraStr2)
+    paraStr =paraStr2.join('');
+    
+        str=paraStr
+    
+    console.log(paraStr2)
+    para2.textContent=`${paraStr}`
+    
+    } 
+
+// digit keys section 
 
 
 function getOne(){
@@ -160,28 +186,24 @@ function getOne(){
     para2.textContent=`${str}`
     bool=false
    }
-
     str+='1'
     para2.textContent=`${str}`
-    
        
-    
 }
+
 
 function getTwo(){
    
-
     if(bool==true){
         str=''
         para2.textContent=`${str}`
         bool=false
        }
     str+='2'
-    
     para2.textContent=`${str}`
-       
     
 }
+
 
 function getThree(){
     
@@ -192,10 +214,10 @@ function getThree(){
        }
     str+='3'
     para2.textContent=`${str}`
-    
-       
-    
+
 }
+
+
 
 function getFour(){
     
@@ -206,9 +228,7 @@ function getFour(){
        }
     str+='4'
     para2.textContent=`${str}`
-    
-       
-    
+
 }
 
 
@@ -221,10 +241,10 @@ function getFive(){
        }
     str+='5'
     para2.textContent=`${str}`
-    
-       
-    
+   
 }
+
+
 function getSix(){
 
     if(bool==true){
@@ -234,10 +254,9 @@ function getSix(){
        }
     str+='6'
     para2.textContent=`${str}`
-    
-       
-    
+
 }
+
 
 function getSeven(){
    
@@ -248,26 +267,24 @@ function getSeven(){
        }
     str+='7'
     para2.textContent=`${str}`
-    
-       
-    
+ 
 }
 
+
 function getEight(){
+
     if(bool==true){
         str=''
         para2.textContent=`${str}`
         bool=false
        }
-    
     str+='8';
     para2.textContent=`${str}`
-    
-        
-    
+   
 }
 
 function getNine(){
+
     if(bool==true){
         str=''
         para2.textContent=`${str}`
@@ -275,12 +292,12 @@ function getNine(){
        }
     str+='9';
     para2.textContent=`${str}`
-    
-        
-    
+      
 }
 
+
 function getZero(){
+
     if(bool==true){
         str=''
         para2.textContent=`${str}`
@@ -288,11 +305,11 @@ function getZero(){
        }
     str+='0';
     para2.textContent=`${str}`
-    
         
 }
 
 function getDZero(){
+
     if(bool==true){
         str=''
         para2.textContent=`${str}`
@@ -300,15 +317,24 @@ function getDZero(){
        }
     str+='00';
     para2.textContent=`${str}`
+
 }
 
+
+// operation section or symbols section 
+
+
 function getPoint(){
+
     if(str.includes('.')){
         return
     }
+
     str+='.';
     para2.textContent=`${str}`
+
 }
+
 
 function getPlus(){
     
@@ -316,7 +342,6 @@ function getPlus(){
         para.textContent=''
         para.textContent=`${result}`
     }
-
 
     if(num!=''){
         num2=str
@@ -341,13 +366,13 @@ function getPlus(){
   ;
 }
 
+
 function getMin(){
 
     if(para.textContent!=''){
         para.textContent=''
         para.textContent=`${result}`
     }
-
 
     if(num!=''){
         num2=str
@@ -372,12 +397,12 @@ function getMin(){
   
 }
 
+
 function getDevide(){
     if(para.textContent!=''){
         para.textContent=''
         para.textContent=`${result}`
     }
-
 
     if(num!=''){
         num2=str
@@ -401,6 +426,7 @@ function getDevide(){
     }
     
   }
+
 
   function getMultiply(){
     
@@ -409,7 +435,6 @@ function getDevide(){
         para.textContent=`${result}`
     }
 
-
     if(num!=''){
         num2=str
         exp+=num2;
@@ -433,13 +458,14 @@ function getDevide(){
     
   }
 
+
+
   function getMod(){
    
     if(para.textContent!=''){
         para.textContent=''
         para.textContent=`${result}`
     }
-
 
     if(num!=''){
         num2=str
@@ -461,6 +487,7 @@ function getDevide(){
         opt='%'
         exp+=opt
     }
+
   }
 
 
@@ -473,9 +500,9 @@ function getDevide(){
       num=str
     para.textContent=`root of ${num}`
      cal(num,'0.5','root')
-
-    
+ 
   }
+
 
 function getEqual(){
     
@@ -489,26 +516,12 @@ function getEqual(){
    exp=''
    para.textContent=`${exp}`
    }
-}
-
-function getBackSpace(){
-
-let paraStr = para2.textContent
-let paraStr2 = paraStr.split('')
-console.log(paraStr2)
-paraStr2.pop();
-
-console.log(paraStr2)
-paraStr =paraStr2.join('');
-
-    str=paraStr
-
-console.log(paraStr2)
-para2.textContent=`${paraStr}`
-
-
 
 }
+
+
+// calculation function which does various operations
+
 
 function cal(num,num2,opt){
     num =parseFloat(num)
@@ -551,13 +564,17 @@ if(result>99999999999){
    
 }else{
     if(String(result).includes('.')){
-result= result.toFixed(4)}
-para2.textContent=`${result}`
+result= result.toFixed(4)
 
+}
+
+para2.textContent=`${result}`
 
 bool = false;
 result = String(result)
+
 }
+
 
 }
 
