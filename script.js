@@ -5,7 +5,8 @@ let num2='';
 let opt='';
 bool = false
 let result;
-
+let expHistory = []
+expHistory.length=50
 const myTimeout = setTimeout(getOff, 500);
 let inputBox = document.querySelector('.input-f');
 inputBox.style='text-align: right;align-item:center;'
@@ -54,6 +55,8 @@ zero.addEventListener('click',getZero)
 let zeroD = document.querySelector('.d-zero')
 zeroD.addEventListener('click',getDZero)
 
+// let auto = document.querySelector('.auto')
+// auto.addEventListener('click',getAutoRpl)
 // events of sign section 
 
 
@@ -94,6 +97,7 @@ backSpace.addEventListener('click',getBackSpace)
 
 
 
+
 function getSignChange(){
     if(str.includes('-')){
         str =str.split('')
@@ -124,6 +128,10 @@ function getOn(){
     
     para2.textContent=`0`
     str=''
+    opt=''
+    exp=''
+    num=''
+    num2=''
     On.style.background='red'
      para.textContent=''
      if(para2.textContent=='0'){
@@ -475,6 +483,7 @@ function getEqual(){
    exp+=str;
    cal(num,num2,opt)
    para.textContent=`${exp}`
+   expHistory.unshift(exp)
    if(bool!=false){
     bool = true;
    exp=''
@@ -505,7 +514,7 @@ function cal(num,num2,opt){
     num =parseFloat(num)
     num2=parseFloat(num2)
 
-
+    para.textContent=`${exp}`
 
 switch(opt) {
 
@@ -552,7 +561,21 @@ result = String(result)
 
 }
 
+// function getAutoRpl(i){
 
+//     for(let i=0;i<expHistory.length;){
+
+//         para2.textContent=`${expHistory[i]}`
+       
+//        setTimeout(incerementI,600)
+//        function incerementI(i){
+//          i++
+           
+//        }
+//     }
+
+
+// }
 
   
 
